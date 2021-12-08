@@ -18,6 +18,9 @@ defmodule KeisanWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    live "/guess", PageLive, :index
+    live "/success", SuccessLive, :index
   end
 
   # Other scopes may use custom stacks.
