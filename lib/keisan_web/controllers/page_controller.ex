@@ -2,6 +2,10 @@ defmodule KeisanWeb.PageController do
   use KeisanWeb, :controller
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    if conn.assigns.current_user do
+      redirect(conn, to: "/guess")
+    else
+      render(conn, "index.html")
+    end
   end
 end
